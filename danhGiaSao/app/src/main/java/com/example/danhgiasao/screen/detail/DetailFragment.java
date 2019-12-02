@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
@@ -20,8 +21,10 @@ import androidx.fragment.app.Fragment;
 import java.util.Objects;
 import com.example.danhgiasao.R;
 import com.example.danhgiasao.model.User;
+import com.example.danhgiasao.screen.home.HomeFragment;
 import com.example.danhgiasao.screen.main.MainActivity;
 import com.example.danhgiasao.util.onClickFragmentInterface;
+
 
 public class DetailFragment extends Fragment implements RatingBar.OnRatingBarChangeListener{
 
@@ -32,7 +35,6 @@ public class DetailFragment extends Fragment implements RatingBar.OnRatingBarCha
     private RatingBar mRatingBar;
     private SharedPreferences mPreferences;
     private onClickFragmentInterface mClickFragmentInterface;
-
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     @Nullable
     @Override
@@ -46,6 +48,7 @@ public class DetailFragment extends Fragment implements RatingBar.OnRatingBarCha
         return view;
     }
 
+
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     @SuppressLint("CommitPrefEdits")
     private void initView(View view) {
@@ -53,9 +56,9 @@ public class DetailFragment extends Fragment implements RatingBar.OnRatingBarCha
         mName = view.findViewById(R.id.myName);
         mBirthday = view.findViewById(R.id.myBirthday);
         mRatingBar = view.findViewById(R.id.myRating);
-
         mPreferences = Objects.requireNonNull(getContext())
                 .getSharedPreferences("Rating", Context.MODE_PRIVATE);
+
         mEditor = mPreferences.edit();
        // lưu đánh giá sao
        mRatingBar.setOnRatingBarChangeListener(this);
@@ -63,12 +66,13 @@ public class DetailFragment extends Fragment implements RatingBar.OnRatingBarCha
         if (mUser==null){
             mUser = new User.UserBuilder().id(0)
                     .image(R.drawable.anh01)
-                    .name("Nguoi Nao Do")
+                    .name("mokey d luffy")
                     .birthday("04/12/2000")
                     .build();
             showInfo(mUser);
         }
     }
+
 
     public void showInfo(User user){
         mUser = user;
@@ -105,4 +109,5 @@ public class DetailFragment extends Fragment implements RatingBar.OnRatingBarCha
         super.onSaveInstanceState(outState);
         outState.putParcelable("user", mUser);
     }
+
 }
