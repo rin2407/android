@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".rating">
+
+    <ImageView
+        android:id="@+id/image_rating"
+        android:layout_width="257dp"
+        android:layout_height="176dp"
+        android:layout_marginStart="129dp"
+        android:layout_marginLeft="129dp"
+        android:layout_marginTop="52dp"
+        android:layout_marginEnd="248dp"
+        android:layout_marginRight="248dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.233"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ratingBar"
+        app:srcCompat="@android:drawable/editbox_dropdown_dark_frame" />
+
+    <RatingBar
+        android:id="@+id/ratingBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="77dp"
+        android:layout_marginLeft="77dp"
+        android:layout_marginTop="59dp"
+        android:layout_marginEnd="94dp"
+        android:layout_marginRight="94dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/des"
+        android:layout_width="155dp"
+        android:layout_height="134dp"
+        android:layout_marginStart="155dp"
+        android:layout_marginLeft="155dp"
+        android:layout_marginTop="80dp"
+        android:layout_marginEnd="197dp"
+        android:layout_marginRight="197dp"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.281"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/image_rating" />
+</androidx.constraintlayout.widget.ConstraintLayout>
