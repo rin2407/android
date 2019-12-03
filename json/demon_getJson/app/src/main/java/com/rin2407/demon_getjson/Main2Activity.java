@@ -48,7 +48,7 @@ public class Main2Activity extends AppCompatActivity {
 
         /*RETROFIT*/
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("https://"+link+"/")
+                .baseUrl(link+"/")
 //                .baseUrl("http://nopbai.live/data/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
